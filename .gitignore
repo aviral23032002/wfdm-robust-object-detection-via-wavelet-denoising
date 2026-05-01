@@ -1,0 +1,145 @@
+# =============================================================================
+# macOS System Files
+# =============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =============================================================================
+# Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+*.pdb
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+MANIFEST
+
+# Virtual environments
+.env
+.env.*
+venv/
+env/
+ENV/
+.venv/
+.virtualenv/
+conda-env/
+miniconda3/
+miniforge3/
+Miniforge3-MacOSX-arm64.sh
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Type checking / linting
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pylint.d/
+
+# Testing
+.pytest_cache/
+.tox/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# =============================================================================
+# Machine Learning / PyTorch / YOLO
+# =============================================================================
+
+# Model weights (can be large — download/re-train as needed)
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.pkl
+*.bin
+*.safetensors
+
+# YOLOv8 / Ultralytics training outputs
+runs/
+wandb/
+mlruns/
+lightning_logs/
+outputs/
+
+# Ultralytics config cache
+~/.config/Ultralytics/
+
+# =============================================================================
+# ExDark Dataset  (CRITICAL: Do not push GBs of images)
+# =============================================================================
+data/images/
+data/labels/
+data/raw_images/
+data/raw_annotations/
+data/*.cache
+data/*.zip
+data/*.tar
+data/*.tar.gz
+
+# Keep only YAML configs and metadata text files in data/
+# (data/exdark.yaml and data/imageclasslist.txt will still be tracked)
+
+# =============================================================================
+# Miscellaneous Large / Generated Files
+# =============================================================================
+
+# Conda / pip lock snapshots (optional — remove if you want to track these)
+# conda-lock.yml
+# requirements.lock
+
+# Log files
+*.log
+logs/
+
+# Temporary / scratch images committed by accident
+corrupted_sample_*.jpg
+coco8_test/
+
+# Compressed archives
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+
+# =============================================================================
+# IDEs and Editors
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# =============================================================================
+# Secrets / Credentials
+# =============================================================================
+*.pem
+*.key
+secrets.json
+.secrets/
