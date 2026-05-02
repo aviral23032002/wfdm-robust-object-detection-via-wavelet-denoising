@@ -1,0 +1,11 @@
+# data/exdark_corrupt_test.yaml
+path: .
+
+# Dummy paths just to satisfy YOLO's strict YAML parser
+train: data/images/train
+val: data/images/val
+
+test: data/images/test_corrupt
+
+nc: 12
+names: ['Bicycle', 'Boat', 'Bottle', 'Bus', 'Car', 'Cat', 'Chair', 'Cup', 'Dog', 'Motorbike', 'People', 'Table']

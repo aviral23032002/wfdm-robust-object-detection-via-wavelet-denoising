@@ -1,6 +1,7 @@
 Test on clean ExDark data:
   - Baseline mAP@0.5: 0.6451 (val)
   - Corrupted mAP@0.5: 0.6209 (val-2)
+  - FDMMAP@0.5: 0.6142 (val-3)
 
 Test on corrupted ExDark data:
 
@@ -14,3 +15,4 @@ Test on BDD100K Night:
 
 ✅ Baseline training complete in 5h 40m 31.81s!
 ✅ Corrupted training complete in 5h 36m 35.48s!
+✅ Standard FDM training complete in 5h 48m 25.11s!
