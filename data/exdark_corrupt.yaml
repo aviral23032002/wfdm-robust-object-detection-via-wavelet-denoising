@@ -1,8 +1,8 @@
 # data/exdark_corrupt.yaml
 path: ./data
 train: images/train_corrupt  # Train on the corrupted images
-val: images/val              # Validate on clean images
-test: images/test            # Test on clean images
+val: images/val_corrupt              # Validate on clean images
+test: images/test_corrupt            # Test on clean images
 
 names:
   0: Bicycle

@@ -75,6 +75,10 @@ coverage.xml
 *.bin
 *.safetensors
 
+# EXCEPTIONS: Explicitly allow the model_checkpoints directory
+!model_checkpoints/
+!model_checkpoints/*.pt
+
 # YOLOv8 / Ultralytics training outputs
 runs/
 wandb/
