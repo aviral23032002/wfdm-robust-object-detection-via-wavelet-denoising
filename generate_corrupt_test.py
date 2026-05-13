@@ -4,11 +4,11 @@ import cv2
 import albumentations as A
 
 def create_corrupted_test_dataset():
-    clean_test_img = "data/images/test"
-    clean_test_lbl = "data/labels/test"
+    clean_test_img = "data/images/val"
+    clean_test_lbl = "data/labels/val"
     
-    corrupt_test_img = "data/images/test_corrupt"
-    corrupt_test_lbl = "data/labels/test_corrupt"
+    corrupt_test_img = "data/images/val_corrupt"
+    corrupt_test_lbl = "data/labels/val_corrupt"
     
     os.makedirs(corrupt_test_img, exist_ok=True)
     os.makedirs(corrupt_test_lbl, exist_ok=True)

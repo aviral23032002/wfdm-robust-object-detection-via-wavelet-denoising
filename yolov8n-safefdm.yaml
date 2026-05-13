@@ -1,0 +1,42 @@
+# yolov8n-safefdm-p2.yaml
+# YOLOv8 with SafeFDM intercepting high-resolution P2 features before downsampling
+
+nc: 12 
+scales:
+  n: [0.33, 0.25, 1024]
+
+backbone:
+  - [-1, 1, Conv, [64, 3, 2]]   # 0-P1/2
+  - [-1, 1, Conv, [128, 3, 2]]  # 1-P2/4
+  - [-1, 3, C2f, [128, True]]   # 2 (P2 Features: 160x160 resolution, 32 channels)
+  
+  # --- THE P2 PRE-DOWNSAMPLE INTERCEPT ---
+  - [-1, 1, SafeFDM, [32]]      # 3 (Cleans high-resolution noise before compression)
+
+  - [-1, 1, Conv, [256, 3, 2]]  # 4-P3/8 (Downsamples the CLEANED signal)
+  - [-1, 6, C2f, [256, True]]   # 5 (P3 Features)
+  
+  - [-1, 1, Conv, [512, 3, 2]]  # 6-P4/16
+  - [-1, 6, C2f, [512, True]]   # 7 (P4 Features)
+  - [-1, 1, Conv, [1024, 3, 2]] # 8-P5/32
+  - [-1, 3, C2f, [1024, True]]  # 9 (P5 Features)
+  - [-1, 1, SPPF, [1024, 5]]    # 10
+
+head:
+  - [-1, 1, nn.Upsample, [None, 2, 'nearest']] # 11
+  - [[-1, 7], 1, Concat, [1]]  # 12 (Connects perfectly to P4 at index 7)
+  - [-1, 3, C2f, [512]]        # 13
+
+  - [-1, 1, nn.Upsample, [None, 2, 'nearest']] # 14
+  - [[-1, 5], 1, Concat, [1]]  # 15 (Connects perfectly to P3 at index 5)
+  - [-1, 3, C2f, [256]]        # 16
+
+  - [-1, 1, Conv, [256, 3, 2]] # 17
+  - [[-1, 13], 1, Concat, [1]] # 18 
+  - [-1, 3, C2f, [512]]        # 19
+
+  - [-1, 1, Conv, [512, 3, 2]] # 20
+  - [[-1, 10], 1, Concat, [1]] # 21 (Connects to SPPF at index 10)
+  - [-1, 3, C2f, [1024]]       # 22
+
+  - [[16, 19, 22], 1, Detect, [nc]]  # 23

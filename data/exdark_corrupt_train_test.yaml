@@ -1,0 +1,14 @@
+# data/exdark_corrupt_train_test.yaml
+path: .
+
+# 1. The 50/50 Corrupted Training Set you made earlier
+train: data/images/train_corrupt
+
+# 2. Standard validation set for checking health during epochs
+val: data/images/val
+
+# 3. Standard test set for the final evaluation
+test: data/images/test_corrupt
+
+nc: 12
+names: ['Bicycle', 'Boat', 'Bottle', 'Bus', 'Car', 'Cat', 'Chair', 'Cup', 'Dog', 'Motorbike', 'People', 'Table']

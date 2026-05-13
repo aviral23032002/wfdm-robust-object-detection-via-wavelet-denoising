@@ -9,7 +9,7 @@ start_time = time.time()
 
 # Train the model on the corrupted ExDark split
 results = model.train(
-    data='data/exdark_corrupt.yaml',  # Points to the YAML with the corrupted train folder
+    data='data/exdark_corrupt_all.yaml',  # Points to the YAML with the corrupted train folder
     epochs=100,               
     imgsz=640,
     device='mps',             # Routing to the M4 GPU

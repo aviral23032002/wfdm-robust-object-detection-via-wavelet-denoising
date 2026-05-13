@@ -4,8 +4,12 @@ Test on clean ExDark data:
   - FDMMAP@0.5: 0.6142 (val-3)
 
 Test on corrupted ExDark data:
+  - Vanilla Baseline (Clean Train): 0.3111
+  - Corrupt Baseline (Corrupt Train): 0.4400
+  - Standard FDM (Clean Train): 0.2900
 
 Test on COCO-C Fog3:
+
 
 Test on COCO-C Noise3:
 
@@ -16,3 +20,14 @@ Test on BDD100K Night:
 ✅ Baseline training complete in 5h 40m 31.81s!
 ✅ Corrupted training complete in 5h 36m 35.48s!
 ✅ Standard FDM training complete in 5h 48m 25.11s!
+
+
+
+
+train on corrput + fdm on p3 + add learnable parameter + test on corrupt with a baseline of 0.44 . 
+should come greater than this baseline 
+leranable parameter helps to add a weight on fdm. it uses fdm only if it is helping. so we dont come less than baseline
+instead using this Zero-Initialized Channel-Wise Attention Gate
+
+baseline with train on corrupt + val on corrupt and test on corrupt : 0.37
+

@@ -143,3 +143,5 @@ coco8_test/
 *.key
 secrets.json
 .secrets/
+
+datasets/

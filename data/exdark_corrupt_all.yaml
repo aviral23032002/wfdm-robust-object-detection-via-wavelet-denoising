@@ -1,0 +1,17 @@
+# data/exdark_corrupt_all.yaml
+# ====================================================
+# KEY FIX: val is now test_corrupt, not clean val.
+# This means best.pt will be saved for the checkpoint
+# that is BEST at handling corrupted images — which is
+# exactly what we want to maximize.
+# ====================================================
+path: .
+
+train: data/images/train_corrupt    # train on corrupted images
+val:   data/images/val_corrupt     # validate on corrupt → best.pt optimal for corruption
+
+# Hold-out test set (run manually after training)
+test:  data/images/test_corrupt
+
+nc: 12
+names: ['Bicycle', 'Boat', 'Bottle', 'Bus', 'Car', 'Cat', 'Chair', 'Cup', 'Dog', 'Motorbike', 'People', 'Table']
